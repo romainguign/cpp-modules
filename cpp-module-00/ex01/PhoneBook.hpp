@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 20:29:12 by roguigna          #+#    #+#             */
-/*   Updated: 2024/06/11 20:50:22 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/07/16 18:43:43 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,21 @@
 # define PHONEBOOK_H
 
 # include <string>
+# include "Contact.hpp"
 
 class PhoneBook
 {
 
-public:
-	char	*contact[8];
+private:
+	Contact	_contact[8];
+	int		_index;
 
+public:
 	PhoneBook();
 	~PhoneBook();
-
-	void	add_contact(std::str new_contact);
 	
+	void	add_contact();
+	void	search_contact();
 };
 
 #endif

@@ -6,7 +6,7 @@
 #    By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/11 16:11:46 by roguigna          #+#    #+#              #
-#    Updated: 2024/06/11 20:29:47 by roguigna         ###   ########.fr        #
+#    Updated: 2024/07/16 17:31:27 by roguigna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ INCLUDE			= -I .
 
 ##############################  SOURCES  #####################################
 
-SRC				= megaphone.cpp
+SRC				= main.cpp Contact.cpp PhoneBook.cpp
 
 OBJ				= $(SRC:%.cpp=%.o)
 
