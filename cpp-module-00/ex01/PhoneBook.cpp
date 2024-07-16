@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 20:40:35 by roguigna          #+#    #+#             */
-/*   Updated: 2024/07/16 19:43:55 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/07/16 20:14:00 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ std::string print_format(const std::string& str)
         return (std::string(10 - str.length(), ' ') + str);
 }
 
-static void	print_contact(Contact& contact)
+void	PhoneBook::print_contact(Contact contact)
 {
 	std::cout << "First name     : " << contact.getFirst_name() << std::endl;
 	std::cout << "Last name      : " << contact.getLast_name() << std::endl;
@@ -127,7 +127,7 @@ void	PhoneBook::search_contact()
 			return ;
 		if (input.length() == 1 && input[0] >= '1' && input[0] <= '8')
 		{
-			print_contact(this->_contact[i - 1]);
+			print_contact(this->_contact[input[0] - 1 - '0']);
 			break ;
 		}
 		else

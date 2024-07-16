@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 20:29:12 by roguigna          #+#    #+#             */
-/*   Updated: 2024/07/16 18:43:43 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/07/16 20:11:09 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ public:
 	
 	void	add_contact();
 	void	search_contact();
+	void	print_contact(Contact contact);
+
 };
 
 #endif
