@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 20:29:12 by roguigna          #+#    #+#             */
-/*   Updated: 2024/07/16 20:11:09 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/07/18 15:45:43 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@
 class PhoneBook
 {
 
-private:
-	Contact	_contact[8];
-	int		_index;
+	private:
+		Contact	_contact[8];
+		int		_index;
 
-public:
-	PhoneBook();
-	~PhoneBook();
-	
-	void	add_contact();
-	void	search_contact();
-	void	print_contact(Contact contact);
+	public:
+		PhoneBook();
+		~PhoneBook();
+		
+		void	add_contact();
+		void	search_contact();
+		void	print_contact(Contact contact);
 
 };
 

@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/17 17:58:43 by roguigna          #+#    #+#             */
-/*   Updated: 2024/07/18 13:30:16 by roguigna         ###   ########.fr       */
+/*   Created: 2024/07/17 17:52:19 by roguigna          #+#    #+#             */
+/*   Updated: 2024/07/18 14:37:02 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+# include "Weapon.hpp"
 
-Zombie::Zombie (std::string	name) : _name(name)
+int main()
 {
-	std::cout << name << " has been created !" << std::endl;
-}
-
-Zombie::~Zombie ()
 {
-	std::cout << getName() << " has been destroyed !" << std::endl;
+	Weapon club = Weapon("crude spiked club");
+	HumanA bob("Bob", club);
+	bob.attack();
+	club.setType("some other type of club");
+	bob.attack();
+	}
+	{
+	Weapon club = Weapon("crude spiked club");
+	HumanB jim("Jim");
+	jim.setWeapon(club);
+	jim.attack();
+	club.setType("some other type of club");
+	jim.attack();
 }
-
-void Zombie::announce( void )
-{
-	std::cout << getName() << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-std::string	Zombie::getName( void )
-{
-	return (this->_name);
-}
+ret

@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 17:52:35 by roguigna          #+#    #+#             */
-/*   Updated: 2024/07/17 18:30:46 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/07/18 15:45:08 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@
 class Zombie
 {
 
-private:
-	std::string	_name;
+	private:
+		std::string	_name;
 
-public:
-	Zombie(std::string	name);
-	~Zombie();
-	
-	void announce( void );
+	public:
+		Zombie(std::string	name);
+		~Zombie();
+		
+		void announce( void );
 
-	std::string	getName( void );
+		std::string	getName( void );
 };
 
 void randomChump( std::string name );
