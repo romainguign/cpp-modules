@@ -6,11 +6,11 @@
 #    By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/11 16:11:46 by roguigna          #+#    #+#              #
-#    Updated: 2024/07/17 18:26:24 by roguigna         ###   ########.fr        #
+#    Updated: 2024/07/18 14:09:41 by roguigna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= BraiiiiiiinnnzzzZ
+NAME			= Moar_brainz
 
 CXX				= c++
 
@@ -20,7 +20,7 @@ INCLUDE			= -I .
 
 ##############################  SOURCES  #####################################
 
-SRC				= main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRC				= main.cpp Zombie.cpp zombieHorde.cpp
 
 OBJ				= $(SRC:%.cpp=%.o)
 
