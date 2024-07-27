@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 11:30:04 by roguigna          #+#    #+#             */
-/*   Updated: 2024/07/27 13:47:45 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/07/27 14:18:57 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,5 @@ void Harl::complain( std::string level )
 			return;
 		}
 	}
-	std::cout << "Invalid level" << std::endl;
+	std::cout << "Probably complaining about insignificant problems" << std::endl;
 }
