@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 12:31:18 by roguigna          #+#    #+#             */
-/*   Updated: 2024/07/24 14:34:52 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/07/28 16:36:16 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,13 @@ void	my_sed(std::ifstream &infile, std::string new_filename, std::string s1, std
 		std::getline (infile, line);
 		while (line[i])
 		{
-			if (s1.find(line[i]) != std::string::npos)
+			if (line.length() - i <= s1.length() && !line.compare( i, s1.length() ,s1))
+			{
 				outfile << s2;
+				i += s1.length() - 1;
+				if ((unsigned long)i > line.length())
+					break ;
+			}
 			else
 				outfile << line[i];
 			i++;
