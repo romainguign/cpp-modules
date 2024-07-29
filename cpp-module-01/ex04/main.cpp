@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 12:31:18 by roguigna          #+#    #+#             */
-/*   Updated: 2024/07/28 16:36:16 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/07/29 12:24:13 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ int	main(int argc, char **argv)
 	new_filename = argv[1];
 	new_filename = (std::string)new_filename.append(".replace");
 	my_sed(file, new_filename, argv[2], argv[3]);
+	file.close();
 	return (0);
 }
