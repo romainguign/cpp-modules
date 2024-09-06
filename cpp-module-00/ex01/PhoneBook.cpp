@@ -35,37 +35,51 @@ void	PhoneBook::add_contact()
 
 	if (i > 7)
 		std::cout << this->_contact[i % 8].getFirst_name() << " will be overwrite" << std::endl;
-	std::cout << "First name : ";
-	std::getline(std::cin, input);
-	if (std::cin.eof())
+	while (1)
 	{
-		std::cout << std::endl;
-		return ;
+		std::cout << "First name : ";
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cout << std::endl;
+			return ;
+		}
+		if (input[0])
+			break ;
 	}
 	this->_contact[i % 8].setFirst_name(input);
 	
-	std::cout << "Last name : ";
-	std::getline(std::cin, input);
-	if (std::cin.eof())
+	while (1)
 	{
-		std::cout << std::endl;
-		return ;
+		std::cout << "Last name : ";
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cout << std::endl;
+			return ;
+		}
+		if (input[0])
+			break ;
 	}
 	this->_contact[i % 8].setLast_name(input);
 
-	std::cout << "Nickname : ";
-	std::getline(std::cin, input);
-	if (std::cin.eof())
+	while (1)
 	{
-		std::cout << std::endl;
-		return ;
+		std::cout << "Nickname : ";
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cout << std::endl;
+			return ;
+		}
+		if (input[0])
+			break ;
 	}
 	this->_contact[i % 8].setNickname(input);
 
 	int chk_num = 0;
 	while (!chk_num)
 	{
-
 		std::cout << "Phone Number : ";
 		std::getline(std::cin, input);
 		if (std::cin.eof())
@@ -82,17 +96,20 @@ void	PhoneBook::add_contact()
 			}
 			chk_num = 1;
 		}
-		if (!input[0])
-			break ;
 	}
 	this->_contact[i % 8].setPhone_number(input);
-
 	std::cout << "Darkest secret : ";
-	std::getline(std::cin, input);
-	if (std::cin.eof())
+
+	while (1)
 	{
-		std::cout << std::endl;
-		return ;
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cout << std::endl;
+			return ;
+		}
+		if (input[0])
+			break ;
 	}
 	this->_contact[i % 8].setDarkest_secret(input);
 
