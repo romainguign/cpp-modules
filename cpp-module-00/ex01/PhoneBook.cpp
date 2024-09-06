@@ -128,6 +128,8 @@ void	PhoneBook::search_contact()
 	std::cout << "|__________|__________|__________|__________|" << std::endl;
 	while (i < 8)
 	{
+		if (this->_index < 8 && i >= this->_index % 8)
+			break ;
 		std::cout << "|         " << i + 1
 				  << "|" << print_format(this->_contact[i].getFirst_name())
 				  << "|" << print_format(this->_contact[i].getLast_name())
@@ -135,6 +137,8 @@ void	PhoneBook::search_contact()
 				  << "|" << std::endl;
 		i++;
 	}
+	if (this->_index == 0)
+		return ;
 	std::cout << "|__________|__________|__________|__________|" << std::endl;
 	while (1)
 	{
@@ -142,7 +146,9 @@ void	PhoneBook::search_contact()
 		std::getline(std::cin, input);
 		if (std::cin.eof())
 			return ;
-		if (input.length() == 1 && input[0] >= '1' && input[0] <= '8')
+		if (this->_index < 8 && input[0] - '0' > this->_index % 8)
+			std::cout << "Please the index of an existing contact" << std::endl;
+		else if (input.length() == 1 && input[0] >= '1' && input[0] <= '8')
 		{
 			print_contact(this->_contact[input[0] - 1 - '0']);
 			break ;
