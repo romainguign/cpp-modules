@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include <cctype>
 
 PhoneBook::PhoneBook(void)
 {
@@ -61,12 +62,28 @@ void	PhoneBook::add_contact()
 	}
 	this->_contact[i % 8].setNickname(input);
 
-	std::cout << "Phone Number : ";
-	std::getline(std::cin, input);
-	if (std::cin.eof())
+	int chk_num = 0;
+	while (!chk_num)
 	{
-		std::cout << std::endl;
-		return ;
+
+		std::cout << "Phone Number : ";
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cout << std::endl;
+			return ;
+		}
+		for (int j = 0; input[j]; j++)
+		{
+			if (std::isdigit(input[j]) == 0)
+			{
+				chk_num = 0;
+				break ;
+			}
+			chk_num = 1;
+		}
+		if (!input[0])
+			break ;
 	}
 	this->_contact[i % 8].setPhone_number(input);
 
