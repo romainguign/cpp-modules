@@ -6,42 +6,27 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 14:37:16 by roguigna          #+#    #+#             */
-/*   Updated: 2024/09/26 18:31:42 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/09/26 20:16:20 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Point.hpp"
 
 int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	Fixed c(25.36f);
-	Fixed d(12.12f);
 	
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	// std::cout << "----------------- comp -----------------" << std::endl;
-	// if (c > a)
-	// 	std::cout << "oui" << std::endl;
-	// if (!(c < a))
-	// 	std::cout << "non" << std::endl;
-	// if (c >= a)
-	// 	std::cout << "oui" << std::endl;
-	// if (!(c <= a))
-	// 	std::cout << "non" << std::endl;
-	// if (c != a)
-	// 	std::cout << "oui" << std::endl;
-	// if (!(c == a))
-	// 	std::cout << "non" << std::endl;
-	std::cout << "----------------- min -----------------" << std::endl;
-	std::cout << Fixed::min( b, a ) << std::endl;
-	std::cout << Fixed::min(c, d) << std::endl;
-	std::cout << "----------------- max -----------------" << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	std::cout << Fixed::max(c, d) << std::endl;
+	Point a(2.26f, 3.33f);
+	Point b(0, 0);
+	Point c(9.72f, 0.02f);
+	Point p_in(5.46f, 0.5f);
+	Point p_out(5.78f, 2.19f);
+
+	if (bsp(a, b, c, p_in))
+		std::cout << "p_in : The point is in the triangle" << std::endl;
+	if (!bsp(a, b, c, p_in))
+		std::cout << "p_in: The point is NOT in the triangle" << std::endl;
+	if (bsp(a, b, c, p_out))
+		std::cout << "p_out: The point is NOT in the triangle" << std::endl;
+	if (!bsp(a, b, c, p_out))
+		std::cout << "p_out: The point is NOT in the triangle" << std::endl;
 	return 0;
 }

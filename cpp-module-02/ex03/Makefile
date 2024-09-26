@@ -6,11 +6,11 @@
 #    By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/11 16:11:46 by roguigna          #+#    #+#              #
-#    Updated: 2024/07/29 13:44:53 by roguigna         ###   ########.fr        #
+#    Updated: 2024/09/26 20:11:36 by roguigna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=  Now_we_re_talking
+NAME			=  bsp
 
 CXX				= c++
 
@@ -20,7 +20,7 @@ INCLUDE			= -I .
 
 ##############################  SOURCES  #####################################
 
-SRC				= main.cpp Fixed.cpp
+SRC				= main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 OBJ				= $(SRC:%.cpp=%.o)
 
