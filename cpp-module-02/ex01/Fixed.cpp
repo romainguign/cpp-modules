@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 11:30:04 by roguigna          #+#    #+#             */
-/*   Updated: 2024/07/27 17:22:08 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/09/26 12:59:00 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ Fixed::Fixed() : _value(0){
 
 Fixed::Fixed(const int value){
 	std::cout << "Int constructor called" << std::endl;
-	this->_value = value << this->_fract_bits;
+	_value = value << _fract_bits;
 }
 
 Fixed::Fixed(const float value){
 	std::cout << "Float constructor called" << std::endl;
-	this->_value = value << this->_fract_bits;
+	_value = value * (1 << _fract_bits);
 }
 
 Fixed::Fixed(const Fixed &f) : _value(f._value){
@@ -54,7 +54,16 @@ void Fixed::setRawBits( int const raw )
 }
 
 float	Fixed::toFloat( void ) const
-{}
+{
+	 return ((_value / (1 << _fract_bits)) + ((_value % (1 << _fract_bits)) / (float)(1 << _fract_bits)));
+}
 
 int		Fixed::toInt( void ) const
-{}
+{
+	return (this->_value >> this->_fract_bits);
+}
+
+std::ostream& operator<<(std::ostream& os, const Fixed& obj) {
+    os << obj.toFloat();
+    return (os);
+}
