@@ -16,24 +16,24 @@ ClapTrap::ClapTrap() : _name("Random ClapTrap"){
 	this->_hitPoint = 10;
 	this->_energyPoint = 10;
 	this->_attackDamage = 0;
-	std::cout << "Constructor called for " << this->_name << std::endl;
+	std::cout << "ClapTrap : Constructor called for " << this->_name << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string name) : _name(name){
 	this->_hitPoint = 10;
 	this->_energyPoint = 10;
 	this->_attackDamage = 0;
-	std::cout << "Constructor called for " << this->_name << std::endl;
+	std::cout << "ClapTrap : Constructor called for " << this->_name << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &c)
 {
 	*this = c;
-	std::cout << "Copy constructor called for " << this->_name << std::endl;
+	std::cout << "ClapTrap : Copy constructor called for " << this->_name << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other){
-	std::cout << "Copy assignment operator called " << std::endl;
+	std::cout << "ClapTrap : Copy assignment operator called " << std::endl;
 	if (this != &other)
 	{
 		this->_name = other._name;
@@ -55,6 +55,7 @@ void ClapTrap::attack(std::string& target){
 		this->_energyPoint--;
 	}
 }
+
 void ClapTrap::takeDamage(unsigned int amount){
 	if (!this->_hitPoint)
 		std::cout << this->_name << " does not have enough hit point to take damage" << std::endl;
@@ -68,6 +69,7 @@ void ClapTrap::takeDamage(unsigned int amount){
 		this->_energyPoint--;
 	}
 }
+
 void ClapTrap::beRepaired(unsigned int amount){
 	if (!this->_hitPoint)
 		std::cout << this->_name << " does not have enough hit point to be repaired" << std::endl;
@@ -84,5 +86,5 @@ void ClapTrap::beRepaired(unsigned int amount){
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << "Destructor called for " << this->_name << std::endl;
+	std::cout << "ClapTrap : Destructor called for " << this->_name << std::endl;
 }

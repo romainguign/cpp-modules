@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 11:27:51 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/02 15:14:02 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/02 15:28:40 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string	 _name;
 		int			 _hitPoint;
 		unsigned int _energyPoint;

@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 11:27:51 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/02 15:14:02 by roguigna         ###   ########.fr       */
+/*   Created: 2024/10/01 18:45:58 by roguigna          #+#    #+#             */
+/*   Updated: 2024/10/02 15:29:58 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAP_TRAP_HPP
-# define CLAP_TRAP_HPP
+#ifndef DIAMOND_TRAP_HPP
+# define DIAMOND_TRAP_HPP
 
-# include <iostream>
-# include <string>
+# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
 
-class ClapTrap
+
+class DiamondTrap : public FragTrap, public ScavTrap
 {
-	private:
-		std::string	 _name;
-		int			 _hitPoint;
-		unsigned int _energyPoint;
-		unsigned int _attackDamage;
 	public:
+		std::string _name;
 		
-		ClapTrap();
-		ClapTrap(std::string name);
-		ClapTrap(const ClapTrap &c);
+	public:
+		DiamondTrap();
+		DiamondTrap(std::string name);
+		DiamondTrap(const DiamondTrap &c);
 		
-		ClapTrap& operator=(const ClapTrap& other);
+		DiamondTrap& operator=(const DiamondTrap& other);
 		
 		void attack(std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-
-		~ClapTrap();
+		void whoAmI();
+		
+		~DiamondTrap();
 };
+
 
 #endif
