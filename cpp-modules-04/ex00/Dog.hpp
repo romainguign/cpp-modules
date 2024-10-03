@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:10:20 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/02 17:15:01 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/03 17:27:47 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Dog : public Animal
 		
 		Dog& operator=(const Dog& other);
 
-        void makeSound()const;
+        virtual void makeSound()const;
         
 		~Dog();
 };

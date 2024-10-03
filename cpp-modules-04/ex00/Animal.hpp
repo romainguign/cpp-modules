@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 11:27:51 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/02 17:13:16 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/03 17:28:45 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ class Animal
 		Animal& operator=(const Animal& other);
 
 		std::string getType()const;
-		virtual void makeSound();
-		~Animal();
+		virtual void makeSound() const;
+
+		virtual ~Animal();
 };
 
 #endif
