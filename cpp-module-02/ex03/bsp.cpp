@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 18:39:03 by roguigna          #+#    #+#             */
-/*   Updated: 2024/09/26 20:12:45 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/01 13:58:39 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ bool bsp( Point const a, Point const b, Point const c, Point const point)
 	v1 = (ax * (cy - ay) + (py - ay) * (cx - ax) - px * (cy - ay)) / 
 		((by - ay) * (cx - ax) - (bx - ax) * (cy - ay));
 	v2 = (py - ay - v1 * (by - ay)) / (cy - ay);
-	if (v1 >= 0 && v2 >= 0 && (v1 + v2) <= 1)
+	if (v1 > 0 && v1 < 1 && v2 > 0 && v2 < 1 && (v1 + v2) < 1)
 		return (true);
 	return (false);
 }

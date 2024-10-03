@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 11:30:04 by roguigna          #+#    #+#             */
-/*   Updated: 2024/09/26 12:59:00 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/03 11:03:35 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void Fixed::setRawBits( int const raw )
 
 float	Fixed::toFloat( void ) const
 {
-	 return ((_value / (1 << _fract_bits)) + ((_value % (1 << _fract_bits)) / (float)(1 << _fract_bits)));
+	 return ((float)(_value) / (1 << _fract_bits));
 }
 
 int		Fixed::toInt( void ) const

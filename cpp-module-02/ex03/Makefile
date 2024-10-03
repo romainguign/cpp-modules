@@ -6,7 +6,7 @@
 #    By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/11 16:11:46 by roguigna          #+#    #+#              #
-#    Updated: 2024/09/26 20:11:36 by roguigna         ###   ########.fr        #
+#    Updated: 2024/10/03 10:55:18 by roguigna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME			=  bsp
 
 CXX				= c++
 
-CXXFLAGS 		= -Wall -Wextra -Werror -std=c++98 -g3 
+CXXFLAGS 		= -Wall -Wextra -Werror -std=c++98
 
 INCLUDE			= -I .
 
