@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 16:15:46 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/03 20:17:15 by roguigna         ###   ########.fr       */
+/*   Created: 2024/10/03 18:33:56 by roguigna          #+#    #+#             */
+/*   Updated: 2024/10/03 20:18:34 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Brain.hpp"
 
-Cat::Cat() : Animal("Cat"){
-	std::cout << "Cat : Constructor called" << std::endl;
+Brain::Brain() {
+	for (int i = 0; i < 100; i++)
+		this->ideas[i] = "Need Food";
+	std::cout << "Brain  : Constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &c)
+Brain::Brain(const Brain &c)
 {
 	*this = c;
-	std::cout << "Cat : Copy constructor called" << std::endl;
+	std::cout << "Brain : Copy constructor called" << std::endl;
 }
 
-Cat &Cat::operator=(const Cat &other){
+Brain &Brain::operator=(const Brain &other){
 	std::cout << "Copy assignment operator called " << std::endl;
 	if (this != &other)
-		this->type = other.getType();
+	{
+		for (int i = 0; i < 100; i++)
+			this->ideas[i] = other.ideas[i];
+	}
 	return (*this);
 }
 
-void    Cat::makeSound() const {
-    std::cout << "Meow meow meow meow !" << std::endl;
-}
 
-Cat::~Cat(){
-	std::cout << "Cat : Destructor called " << std::endl;
+Brain::~Brain(){
+	std::cout << "Brain  : Destructor called " << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:15:46 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/03 14:54:16 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/03 20:17:15 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ void    Dog::makeSound() const
 }
 
 Dog::~Dog(){
-	std::cout << "Dog : Destructor called for " << std::endl;
+	std::cout << "Dog : Destructor called " << std::endl;
 }

@@ -1,38 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:15:46 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/03 20:17:15 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/03 20:19:49 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Dog.hpp"
 
-Cat::Cat() : Animal("Cat"){
-	std::cout << "Cat : Constructor called" << std::endl;
+Dog::Dog() : Animal("Dog"){
+	std::cout << "Dog    : Constructor called" << std::endl;
+	this->brain = new Brain;
 }
 
-Cat::Cat(const Cat &c)
+Dog::Dog(const Dog &c)
 {
 	*this = c;
-	std::cout << "Cat : Copy constructor called" << std::endl;
+	std::cout << "Dog    : Copy constructor called" << std::endl;
 }
 
-Cat &Cat::operator=(const Cat &other){
+Dog &Dog::operator=(const Dog &other){
 	std::cout << "Copy assignment operator called " << std::endl;
 	if (this != &other)
+	{
 		this->type = other.getType();
+		if (other.brain)
+		{
+			this->brain = new Brain;
+			this->brain = other.brain;
+		}
+	}
 	return (*this);
 }
 
-void    Cat::makeSound() const {
-    std::cout << "Meow meow meow meow !" << std::endl;
+void    Dog::makeSound() const
+{
+    std::cout << "Wouaf wouaf wouaf !" << std::endl;
 }
 
-Cat::~Cat(){
-	std::cout << "Cat : Destructor called " << std::endl;
+Dog::~Dog(){
+	std::cout << "Dog     : Destructor called " << std::endl;
+	if (this->brain)
+		delete (brain);
 }
