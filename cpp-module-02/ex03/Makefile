@@ -6,7 +6,7 @@
 #    By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/11 16:11:46 by roguigna          #+#    #+#              #
-#    Updated: 2024/10/03 10:55:18 by roguigna         ###   ########.fr        #
+#    Updated: 2024/10/03 13:11:36 by roguigna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,16 +29,16 @@ OBJ				= $(SRC:%.cpp=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJ) 
-	@$(CXX) $(OBJ) $(CXXFLAGS) $(INCLUDE) -o $(NAME)
+	$(CXX) $(OBJ) $(CXXFLAGS) $(INCLUDE) -o $(NAME)
 
 .cpp.o:
-	@$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
+	$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
-	@rm -rf $(OBJ)
+	rm -rf $(OBJ)
 
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
