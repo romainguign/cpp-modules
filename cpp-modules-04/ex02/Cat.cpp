@@ -6,18 +6,18 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:15:46 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/03 20:18:46 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/08 13:27:57 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat"){
+Cat::Cat() : AAnimal("Cat"){
 	std::cout << "Cat    : Constructor called" << std::endl;
 	this->brain = new Brain;
 }
 
-Cat::Cat(const Cat &c)
+Cat::Cat(const Cat &c) : AAnimal("cat")
 {
 	*this = c;
 	std::cout << "Cat    : Copy constructor called" << std::endl;

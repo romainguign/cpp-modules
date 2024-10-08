@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:15:46 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/03 20:18:46 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/08 13:21:58 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ Cat::Cat() : Animal("Cat"){
 	this->brain = new Brain;
 }
 
-Cat::Cat(const Cat &c)
-{
+Cat::Cat(const Cat &c)  : Animal("Cat") {
 	*this = c;
 	std::cout << "Cat    : Copy constructor called" << std::endl;
 }

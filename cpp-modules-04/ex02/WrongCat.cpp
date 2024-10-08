@@ -6,18 +6,17 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:15:46 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/03 20:17:15 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/08 13:33:55 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat() : WrongAnimal("WrongCat"){
+WrongCat::WrongCat() : WrongAAnimal("WrongCat"){
 	std::cout << "WrongCat : Constructor called" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &c)
-{
+WrongCat::WrongCat(const WrongCat &c)  : WrongAAnimal("WrongCat") {
 	*this = c;
 	std::cout << "WrongCat : Copy constructor called" << std::endl;
 }

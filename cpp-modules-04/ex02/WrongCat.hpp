@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:10:30 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/03 17:35:44 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/08 13:34:52 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #ifndef WRONG_CAT_HPP
 # define WRONG_CAT_HPP
 
-# include "WrongAnimal.hpp"
+# include "WrongAAnimal.hpp"
 
-class WrongCat : public WrongAnimal
+class WrongCat : public WrongAAnimal
 {
 
 	public:

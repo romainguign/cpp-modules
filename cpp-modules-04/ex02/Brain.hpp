@@ -6,14 +6,14 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 18:33:56 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/03 20:43:46 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/08 13:27:57 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BRAIN_HPP
 # define BRAIN_HPP
 
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 
 class Brain
 {

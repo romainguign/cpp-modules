@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:15:46 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/03 20:17:15 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/08 13:25:38 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ Cat::Cat() : Animal("Cat"){
 	std::cout << "Cat : Constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &c)
-{
+Cat::Cat(const Cat &c) : Animal("Cat") {
 	*this = c;
 	std::cout << "Cat : Copy constructor called" << std::endl;
 }

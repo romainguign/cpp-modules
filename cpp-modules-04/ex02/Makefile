@@ -6,7 +6,7 @@
 #    By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/11 16:11:46 by roguigna          #+#    #+#              #
-#    Updated: 2024/10/03 19:58:31 by roguigna         ###   ########.fr        #
+#    Updated: 2024/10/08 13:33:55 by roguigna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ INCLUDE			= -I .
 
 ##############################  SOURCES  #####################################
 
-SRC				= main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRC				= main.cpp AAnimal.cpp Cat.cpp Dog.cpp WrongAAnimal.cpp WrongCat.cpp Brain.cpp
 
 OBJ				= $(SRC:%.cpp=%.o)
 

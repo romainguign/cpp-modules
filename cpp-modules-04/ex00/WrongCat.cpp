@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:15:46 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/03 20:17:15 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/08 13:23:14 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ WrongCat::WrongCat() : WrongAnimal("WrongCat"){
 	std::cout << "WrongCat : Constructor called" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &c)
+WrongCat::WrongCat(const WrongCat &c) : WrongAnimal("WrongCat")
 {
 	*this = c;
 	std::cout << "WrongCat : Copy constructor called" << std::endl;

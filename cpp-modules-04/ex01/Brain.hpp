@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 18:33:56 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/03 19:58:19 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/08 13:24:53 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "Animal.hpp"
 
-class Brain : public Animal
+class Brain
 {
     private:
         std::string ideas[100];
