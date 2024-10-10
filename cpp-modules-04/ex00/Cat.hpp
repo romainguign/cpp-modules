@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:10:30 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/03 17:28:37 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/10 13:23:25 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class Cat : public Animal
 
 	public:
 		Cat();
-		Cat(std::string type);
 		Cat(const Cat &a);
 		
 		Cat& operator=(const Cat& other);

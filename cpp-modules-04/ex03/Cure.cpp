@@ -6,17 +6,17 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:49:57 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/08 17:38:37 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/10 14:27:40 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("Cure"){
+Cure::Cure() : AMateria("cure"){
 	// std::cout << "Cure    : Constructor called" << std::endl;
 }
 
-Cure::Cure(const Cure &c) : AMateria("Cure"){
+Cure::Cure(const Cure &c) : AMateria("cure"){
 	*this = c;
 	// std::cout << "Cure    : Copy constructor called" << std::endl;
 }

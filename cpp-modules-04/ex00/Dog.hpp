@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:10:20 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/03 17:27:47 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/10 13:25:58 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,9 @@
 
 class Dog : public Animal
 {
-
 	public:
 		
 		Dog();
-		Dog(std::string type);
 		Dog(const Dog &a);
 		
 		Dog& operator=(const Dog& other);

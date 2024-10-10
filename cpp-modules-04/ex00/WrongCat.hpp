@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:10:30 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/03 17:35:44 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/10 13:07:31 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class WrongCat : public WrongAnimal
 		
 		WrongCat& operator=(const WrongCat& other);
 
-        virtual void makeSound() const;
+        void makeSound() const;
         
 		~WrongCat();
 };

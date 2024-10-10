@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 17:23:39 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/08 17:29:59 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/10 14:26:52 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ AMateria* MateriaSource::createMateria(std::string const & type){
 		if (this->_inventory[i] && this->_inventory[i]->getType() == type)
 			return (this->_inventory[i]->clone());
 	}
-	std::cout << "MateriaSource : Materia not found" << std::endl;
+	std::cout << "MateriaSource : Materia type '" << type << "' not found " << std::endl;
 	return (NULL);
 }
 

@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 11:30:04 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/03 20:17:15 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/10 13:06:12 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ std::string	WrongAnimal::getType()const{
 }
 
 void	WrongAnimal::makeSound() const{
-	std::cout << "WrongAnimal sound" << std::endl;
+	std::cout << "MEUHHHHHHH MIAM COUCOU HI-HAN" << std::endl;
 }
 
 WrongAnimal::~WrongAnimal(){

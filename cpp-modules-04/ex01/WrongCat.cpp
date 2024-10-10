@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:15:46 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/08 13:22:47 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/10 13:05:23 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ WrongCat &WrongCat::operator=(const WrongCat &other){
 }
 
 void    WrongCat::makeSound() const {
-    std::cout << "Meuhhhh vroummmmm coincoin" << std::endl;
+    std::cout << "Meow meow meow meow meow" << std::endl;
 }
 
 WrongCat::~WrongCat(){

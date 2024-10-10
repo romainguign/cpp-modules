@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 14:37:16 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/03 20:21:33 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/10 13:39:54 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,11 @@ int main()
 	}
 	for (int i = 0; i < 100; i++)
 	{
-		std::cout << i + 1 << " : " << animal[i]->getType() << std::endl;
-		delete animal[i];
+		if (animal[i])
+		{
+			std::cout << i + 1 << " : " << animal[i]->getType() << std::endl;
+			delete animal[i];
+		}
 	}
 	return 0;
 }
