@@ -6,18 +6,19 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:49:51 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/11 15:45:04 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/11 16:49:04 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Form.hpp"
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(std::string const & name, int grade) : _name(name){
 	std::cout << "Bureaucrat : Constructor called" << std::endl;
 	if (grade < 1)
-		throw GradeTooLowException();
-	if (grade > 150)
 		throw GradeTooHighException();
+	if (grade > 150)
+		throw GradeTooLowException();
 	_grade = grade;
 }
 
@@ -52,6 +53,17 @@ unsigned int Bureaucrat::getGrade() const {
 	return (this->_grade);
 }
 
+void Bureaucrat::signForm(Form& obj)
+{
+	if (this->_grade > (unsigned int) obj.getGradeToSign())
+	{
+		std::cout << this->_name << " couldn’t sign " << obj.getName() << " because bureaucrat's grade too low." << std::endl;
+		return ;
+	}
+	obj.beSigned(*this);
+	std::cout << obj.getName() << " signed " << this->_name << std::endl;
+}
+
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj)
 {
 	os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
@@ -60,11 +72,11 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj)
 
 
 const char *Bureaucrat::GradeTooHighException::what() const throw(){
-	return ("Error: Grade too high");
+	return ("Bureaucrat: Grade too high");
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw(){
-	return ("Error: Grade too low");
+	return ("Bureaucrat: Grade too low");
 }
 
 Bureaucrat::~Bureaucrat(){

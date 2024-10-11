@@ -6,11 +6,11 @@
 #    By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/11 16:11:46 by roguigna          #+#    #+#              #
-#    Updated: 2024/10/11 14:00:12 by roguigna         ###   ########.fr        #
+#    Updated: 2024/10/11 16:08:36 by roguigna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= Bureaucrat
+NAME			= Form
 
 CXX				= c++
 
@@ -20,7 +20,7 @@ INCLUDE			= -I .
 
 ##############################  SOURCES  #####################################
 
-SRC				= main.cpp Bureaucrat.cpp
+SRC				= main.cpp Bureaucrat.cpp Form.cpp
 
 OBJ				= $(SRC:%.cpp=%.o)
 
