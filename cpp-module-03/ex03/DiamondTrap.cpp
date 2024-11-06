@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 18:46:13 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/02 15:32:34 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/10/09 13:18:41 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ void DiamondTrap::attack(std::string& target) {
 }
 
 void DiamondTrap::whoAmI(){
-	std::cout << "hit point : " << _hitPoint << std::endl;
-	std::cout << "energy    : " << _energyPoint << std::endl;
-	std::cout << "attack    : " << _attackDamage << std::endl;
+	// std::cout << "hit point : " << _hitPoint << std::endl;
+	// std::cout << "energy    : " << _energyPoint << std::endl;
+	// std::cout << "attack    : " << _attackDamage << std::endl;
 
 	if (!this->_hitPoint)
 		std::cout << this->_name << " does not have enough hit point to say names" << std::endl;

@@ -6,11 +6,15 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:49:51 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/11 15:45:04 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/11/06 16:32:46 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+Bureaucrat::Bureaucrat() : _name("default"){
+	std::cout << "Bureaucrat : Default constructor called" << std::endl;
+}
 
 Bureaucrat::Bureaucrat(std::string const & name, int grade) : _name(name){
 	std::cout << "Bureaucrat : Constructor called" << std::endl;

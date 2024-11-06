@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:49:36 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/11 13:52:19 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/11/06 16:32:32 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Bureaucrat
 	private:
 		const std::string	_name;
 		unsigned int		_grade;
+		Bureaucrat();
 	public:
 		Bureaucrat(std::string const & name, int grade);
 		Bureaucrat(Bureaucrat const & c);

@@ -6,11 +6,11 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:49:51 by roguigna          #+#    #+#             */
-/*   Updated: 2024/11/06 16:32:59 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/11/06 16:35:35 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : _name("default"){
@@ -57,7 +57,7 @@ unsigned int Bureaucrat::getGrade() const {
 	return (this->_grade);
 }
 
-void Bureaucrat::signForm(Form& obj)
+void Bureaucrat::signAForm(AForm& obj)
 {
 	if (this->_grade > (unsigned int) obj.getGradeToSign())
 	{
