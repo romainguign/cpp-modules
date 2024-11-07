@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:49:51 by roguigna          #+#    #+#             */
-/*   Updated: 2024/11/06 16:35:35 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/11/07 14:06:24 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,21 @@ void Bureaucrat::signAForm(AForm& obj)
 	}
 	obj.beSigned(*this);
 	std::cout << obj.getName() << " signed " << this->_name << std::endl;
+}
+
+void Bureaucrat::executeAForm(AForm const & form){
+	if (this->_grade > (unsigned int) form.getGradeToExecute())
+	{
+		std::cout << this->_name << " couldn’t execute " << form.getName() << " because bureaucrat's grade too low." << std::endl;
+		return ;
+	}
+	if (form.getSigned())
+	{
+		std::cout << this->_name << " executes " << form.getName() << std::endl;
+		form.execute(*this);
+	}
+	else
+		std::cout << this->_name << " couldn’t execute " << form.getName() << " because form is not signed." << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj)

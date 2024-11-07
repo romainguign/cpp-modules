@@ -85,6 +85,10 @@ const char *AForm::GradeTooLowException::what() const throw(){
 	return ("AForm: Grade too low");
 }
 
+const char *AForm::FormNotSignedException::what() const throw(){
+	return ("AForm: Form not signed");
+}
+
 AForm::~AForm(){
 	std::cout << "AForm : Destructor called " << std::endl;
 }

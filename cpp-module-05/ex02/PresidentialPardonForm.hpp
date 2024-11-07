@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/11 17:05:43 by roguigna          #+#    #+#             */
-/*   Updated: 2024/11/06 17:55:28 by roguigna         ###   ########.fr       */
+/*   Created: 2024/11/07 13:38:01 by roguigna          #+#    #+#             */
+/*   Updated: 2024/11/07 13:38:51 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERY_CREATION_FORM_HPP
-# define SHRUBBERY_CREATION_FORM_HPP
+
+#ifndef PRESIDENTIAL_PARDON_FORM_HPP
+# define PRESIDENTIAL_PARDON_FORM_HPP
 
 # include <iostream>
 # include "AForm.hpp"
-# include <fstream>
 
 class Bureaucrat;
 
-class ShrubberyCreationForm : public AForm
+class PresidentialPardonForm : public AForm
 {
 	private:
 		const std::string	_target;
-		ShrubberyCreationForm();
+		PresidentialPardonForm();
 		
 	public:
-		ShrubberyCreationForm(const std::string & target);
-		ShrubberyCreationForm(ShrubberyCreationForm const & c);
-		ShrubberyCreationForm &operator=(ShrubberyCreationForm const & c);
+		PresidentialPardonForm(const std::string & target);
+		PresidentialPardonForm(PresidentialPardonForm const & c);
+		PresidentialPardonForm &operator=(PresidentialPardonForm const & c);
 
 		virtual void execute(const Bureaucrat& executor) const;
 
 		const std::string getTarget() const;
 		
-		virtual ~ShrubberyCreationForm();
+		virtual ~PresidentialPardonForm();
 };
 
 #endif

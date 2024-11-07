@@ -6,11 +6,11 @@
 #    By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/11 16:11:46 by roguigna          #+#    #+#              #
-#    Updated: 2024/10/11 16:59:49 by roguigna         ###   ########.fr        #
+#    Updated: 2024/11/07 13:53:07 by roguigna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= AForm
+NAME			= ManyForms
 
 CXX				= c++
 
@@ -20,7 +20,8 @@ INCLUDE			= -I .
 
 ##############################  SOURCES  #####################################
 
-SRC				= main.cpp Bureaucrat.cpp AForm.cpp
+SRC				= AForm.cpp  Bureaucrat.cpp ShrubberyCreationForm.cpp main.cpp \
+				  RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 OBJ				= $(SRC:%.cpp=%.o)
 

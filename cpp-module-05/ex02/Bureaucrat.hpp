@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:49:36 by roguigna          #+#    #+#             */
-/*   Updated: 2024/11/06 16:50:31 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/11/07 14:03:19 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ class Bureaucrat
 		void decrementGrade();
 		void incrementGrade();
 		void signAForm(AForm& obj);
+		void executeAForm(AForm const & form);
+
 
 		class GradeTooHighException : public std::exception
         {

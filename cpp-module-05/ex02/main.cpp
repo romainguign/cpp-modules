@@ -6,141 +6,70 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 14:37:16 by roguigna          #+#    #+#             */
-/*   Updated: 2024/10/11 16:59:49 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/11/07 14:24:34 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
-
-void    test_bureaucrat()
-{
-        std::cout << "-------- test constructor --------" << std::endl;
-    try{
-        Bureaucrat eddy("Eddy", 151);
-        std::cout << eddy << std::endl;
-    }
-    catch (std::exception &e){
-        std::cerr << e.what() << std::endl;
-    }
-    try{
-        Bureaucrat eddy("Eddy", 0);
-        std::cout << eddy << std::endl;
-    }
-    catch (std::exception &e){
-        std::cerr << e.what() << std::endl;
-    }
-    try{
-        Bureaucrat eddy("Eddy", -1);
-        std::cout << eddy << std::endl;
-    }
-    catch (std::exception &e){
-        std::cerr << e.what() << std::endl;
-    }
-    try{
-        Bureaucrat eddy("Eddy", 42);
-        std::cout << eddy << std::endl;
-    }
-    catch (std::exception &e){
-        std::cerr << e.what() << std::endl;
-    }
-    std::cout << "\n-------- test increment --------" << std::endl;
-    try{
-        Bureaucrat eddy("Eddy", 5);
-        for (int i = 0; i < 10; i++){
-            eddy.incrementGrade();
-            std::cout << eddy << std::endl;
-        }
-    }
-    catch (std::exception &e){
-        std::cerr << e.what() << std::endl;
-    }
-    std::cout << "\n-------- test decrement --------" << std::endl;
-    try{
-        Bureaucrat eddy("Eddy", 145);
-        for (int i = 0; i < 10; i++){
-            eddy.decrementGrade();
-            std::cout << eddy << std::endl;
-        }
-    }
-    catch (std::exception &e){
-        std::cerr << e.what() << std::endl;
-    }
-}
-
-void    AForm_test()
-{
-            std::cout << "-------- test AForm constructor --------" << std::endl;
-    try{
-        AForm AForm_a("AForm_a", 151, 100);
-        std::cout << AForm_a << std::endl;
-    }
-    catch (std::exception &e){
-        std::cerr << e.what() << std::endl;
-    }
-    try{
-        AForm AForm_a("AForm_a", 0, 30);
-        std::cout << AForm_a << std::endl;
-    }
-    catch (std::exception &e){
-        std::cerr << e.what() << std::endl;
-    }
-    try{
-        AForm AForm_a("AForm_a", -1, 30);
-        std::cout << AForm_a << std::endl;
-    }
-    catch (std::exception &e){
-        std::cerr << e.what() << std::endl;
-    }
-    try{
-        AForm AForm_a("AForm_a", 42, 30);
-        std::cout << AForm_a << std::endl;
-    }
-    catch (std::exception &e){
-        std::cerr << e.what() << std::endl;
-    }
-}
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
-    // ex00 tests : 
-    // test_bureaucrat(); 
-    // AForm_test();
-
-    std::cout << "\n-------- signAForm test -------" << std::endl;
+    
+    std::cout << "-------- test Shrubbery Form --------" << std::endl;
     try {
-        Bureaucrat low("Jean", 42);
-        Bureaucrat high("Pierre", 2);
-        AForm       AForm("AFormulaire de test", 5, 32);
-        std::cout << AForm << std::endl;
-        low.signAForm(AForm);
-        std::cout << AForm << std::endl;
-        high.signAForm(AForm);
-        std::cout << AForm << std::endl;
+        Bureaucrat eddy("Eddy", 1);
+        ShrubberyCreationForm home("home");
+        std::cout << home << std::endl;
+        eddy.signAForm(home);
+        home.execute(eddy);
     }
     catch (std::exception &e){
         std::cerr << e.what() << std::endl;
     }
-    std::cout << "\n-------- beSign test fail-------" << std::endl;
+    std::cout << "\n-------- test Robotomy Form --------" << std::endl;
     try {
-        Bureaucrat low("Jean", 42);
-        AForm       AForm("AFormulaire de test", 5, 32);
-        std::cout << AForm << std::endl;
-        AForm.beSigned(low);
-        std::cout << AForm << std::endl;
+        Bureaucrat eddy("Eddy", 1);
+        RobotomyRequestForm terminator("Terminator");
+        eddy.signAForm(terminator);
+        terminator.execute(eddy);
     }
     catch (std::exception &e){
         std::cerr << e.what() << std::endl;
     }
-    std::cout << "\n-------- beSign test success-------" << std::endl;
+    std::cout << "\n-------- test Presidential Form --------" << std::endl;
     try {
-        Bureaucrat high("Pierre", 2);
-        AForm       AForm("AFormulaire de test", 5, 32);
-        std::cout << AForm << std::endl;
-        AForm.beSigned(high);
-        std::cout << AForm << std::endl;
+        Bureaucrat eddy("Eddy", 1);
+        PresidentialPardonForm tareq("Tareq");
+        eddy.signAForm(tareq);
+        tareq.execute(eddy);
     }
     catch (std::exception &e){
         std::cerr << e.what() << std::endl;
     }
+    std::cout << "\n-------- test ExecuteForm test --------" << std::endl;
+    try {
+        PresidentialPardonForm tareq("Tareq");
+        std::cout << tareq << std::endl;
+        
+        std::cout << "\nnot grade to low :" << std::endl;
+        Bureaucrat eddy("Thomas", 6);
+        eddy.executeAForm(tareq);
+        
+        std::cout << "\nnot signed test :" << std::endl;
+        Bureaucrat axel("Axel", 5);
+        
+        std::cout << "\ntest success :" << std::endl;
+        axel.executeAForm(tareq);
+        axel.signAForm(tareq);
+        axel.executeAForm(tareq);
+        std::cout << std::endl;
+    }
+    catch (std::exception &e){
+        std::cerr << e.what() << std::endl;
+    }
+    return (0);
 }
