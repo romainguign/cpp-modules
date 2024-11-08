@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 17:06:54 by roguigna          #+#    #+#             */
-/*   Updated: 2024/11/08 16:54:17 by roguigna         ###   ########.fr       */
+/*   Created: 2024/11/08 15:02:54 by roguigna          #+#    #+#             */
+/*   Updated: 2024/11/08 15:08:57 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALAR_CONVERTER_HPP
-# define SCALAR_CONVERTER_HPP
+#include "ScalarConverter.hpp"
 
-# include <iostream>
-# include <stdlib.h>
-# include <cmath>
-# include <limits>
+class ScalarConverter;
 
-class ScalarConverter
+int main(int argc, char **argv) 
 {
-	private:
-		ScalarConverter();
-		ScalarConverter(ScalarConverter const &src);
-		ScalarConverter &operator=(ScalarConverter const &src);
-		~ScalarConverter();
-	public:
-		static void convert(std::string const &str);
-
-};
-
-#endif
+    if (argc != 2)
+    {
+        std::cout << "Usage: ./convert [string]" << std::endl;
+        return 1;
+    }
+    std::string str(argv[1]);
+    ScalarConverter::convert(str);
+    return 0;
+}
