@@ -6,13 +6,11 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:02:54 by roguigna          #+#    #+#             */
-/*   Updated: 2024/11/08 18:43:05 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/11/08 18:48:56 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
-
-class ScalarConverter;
 
 void printData(Data *data)
 {

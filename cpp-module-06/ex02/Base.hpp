@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 15:02:54 by roguigna          #+#    #+#             */
-/*   Updated: 2024/11/08 18:23:34 by roguigna         ###   ########.fr       */
+/*   Created: 2024/11/08 18:50:56 by roguigna          #+#    #+#             */
+/*   Updated: 2024/11/08 18:53:55 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef BASE_HPP
+# define BASE_HPP
 
-int main(int argc, char **argv) 
+# include <iostream>
+
+class Base
 {
-    if (argc != 2)
-    {
-        std::cout << "Usage: ./convert [string]" << std::endl;
-        return 1;
-    }
-    std::string str(argv[1]);
-    ScalarConverter::convert(str);
-    return 0;
-}
+	public:
+		virtual ~Base();
+
+};
+
+#endif
