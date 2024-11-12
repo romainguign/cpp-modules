@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:02:54 by roguigna          #+#    #+#             */
-/*   Updated: 2024/11/11 14:58:05 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/11/12 14:48:16 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int main(void)
     std::cout << "\n-------- test with string --------" << std::endl;
     
     std::string c = "chaine1";
+    std::cout << "swap(a, b)" << std::endl;
     std::string d = "chaine2";
     
     std::cout << "c = " << c << ", d = " << d << std::endl;

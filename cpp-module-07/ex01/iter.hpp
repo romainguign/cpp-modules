@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:06:54 by roguigna          #+#    #+#             */
-/*   Updated: 2024/11/11 15:27:27 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/11/12 14:45:31 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 # include <iostream>
 
 
-template <typename T>
-void iter(T* array, size_t length, void (*func)(T&)) {
+template <typename T, typename F>
+void iter(T* array, size_t length, F function) {
 	for (size_t i = 0; i < length; ++i) {
-		func(array[i]);
+		function(array[i]);
 	}
 }
 
 template <typename T>
-void print(T& elem) {
+void printIter(T& elem) {
 	std::cout << elem << std::endl;
 }
 
