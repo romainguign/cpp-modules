@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:02:54 by roguigna          #+#    #+#             */
-/*   Updated: 2024/11/12 14:52:55 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/11/14 17:09:23 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int main(void)
 	array[0] = 42;
 	array[1] = 21;
 	
-	Array<int> array2 = array;
+	Array<int> array2;
+	array2 = array;
 	Array<int> array3(array);
 	
 	std::cout << "Array size: " << array.size() << std::endl;
