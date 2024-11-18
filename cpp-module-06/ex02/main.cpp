@@ -71,5 +71,6 @@ int main(void)
     std::cout << "Reference: ";
     identify(*base);
 
+    delete (base);
     return 0;
 }
