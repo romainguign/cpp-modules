@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:41:48 by roguigna          #+#    #+#             */
-/*   Updated: 2024/11/14 18:34:31 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/11/18 17:45:53 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,13 @@ class BitcoinExchange
 {
 	private:
 		std::map<std::string, double> _data;
-		std::map<std::string, double> _input;
 	public:
 		BitcoinExchange();
 		~BitcoinExchange();
 
-		void loadFile(char *filename);
-		void display();
+		void convertExchanges(char *filename);
 		void saveData();
+		void displayExchangeRate(std::string &date, double value) const;
 };
 
 #endif

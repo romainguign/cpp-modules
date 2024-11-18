@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:39:57 by roguigna          #+#    #+#             */
-/*   Updated: 2024/11/14 16:50:22 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/11/18 17:21:32 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ int main(int argc, char **argv)
 	}
 	try {
 		BitcoinExchange exchanges;
-		exchanges.loadFile(argv[1]);
-		exchanges.display();
+		exchanges.convertExchanges(argv[1]);
 	}
 	catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
