@@ -6,11 +6,11 @@
 #    By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/11 16:11:46 by roguigna          #+#    #+#              #
-#    Updated: 2024/11/19 17:21:50 by roguigna         ###   ########.fr        #
+#    Updated: 2024/11/21 19:24:44 by roguigna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= btc
+NAME			= RPN
 
 CXX				= c++
 
@@ -20,7 +20,7 @@ INCLUDE			= -I .
 
 ##############################  SOURCES  #####################################
 
-SRC				= main.cpp BitcoinExchange.cpp
+SRC				= main.cpp RPN.cpp
 OBJ				= $(SRC:%.cpp=%.o)
 
 ##############################  RULES  #######################################
