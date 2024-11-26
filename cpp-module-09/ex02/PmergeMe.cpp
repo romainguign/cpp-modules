@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 19:49:24 by roguigna          #+#    #+#             */
-/*   Updated: 2024/11/25 15:02:40 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/11/26 15:09:47 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,63 @@ void PmergeMe::fillContainers(int argc, char **argv)
 	}
 }
 
+static void fordJohnsonSortVector(std::vector<int> &v1)
+{
+	   if (v1.size() <= 1)
+        return;
 
+    std::vector<int> small, large;
+    for (size_t i = 0; i + 1 < v1.size(); i += 2) {
+        if (v1[i] < v1[i + 1]) {
+            small.push_back(v1[i]);
+            large.push_back(v1[i + 1]);
+        } else {
+            small.push_back(v1[i + 1]);
+            large.push_back(v1[i]);
+        }
+    }
+
+    if (v1.size() % 2 == 1)
+        small.push_back(v1.back());
+
+    fordJohnsonSortVector(large);
+	std::vector<int> result = large;
+
+    for (size_t i = 0; i < small.size(); ++i) {
+        std::vector<int>::iterator it = std::lower_bound(result.begin(), result.end(), small[i]);
+        result.insert(it, small[i]);
+    }
+    v1 = result;
+}
+
+static void fordJohnsonSortDeque(std::deque<int> &v1)
+{
+	   if (v1.size() <= 1)
+        return;
+
+    std::deque<int> small, large;
+    for (size_t i = 0; i + 1 < v1.size(); i += 2) {
+        if (v1[i] < v1[i + 1]) {
+            small.push_back(v1[i]);
+            large.push_back(v1[i + 1]);
+        } else {
+            small.push_back(v1[i + 1]);
+            large.push_back(v1[i]);
+        }
+    }
+
+    if (v1.size() % 2 == 1)
+        small.push_back(v1.back());
+
+    fordJohnsonSortDeque(large);
+	std::deque<int> result = large;
+
+    for (size_t i = 0; i < small.size(); ++i) {
+        std::deque<int>::iterator it = std::lower_bound(result.begin(), result.end(), small[i]);
+        result.insert(it, small[i]);
+    }
+    v1 = result;
+}
 
 void PmergeMe::displayAndSort()
 {
@@ -74,14 +130,18 @@ void PmergeMe::displayAndSort()
 	std::cout << std::endl;
 
 	std::clock_t startVec = std::clock();
-	void sortVector();
+	fordJohnsonSortVector(_v1);
 	std::clock_t startDeque = std::clock();
 	std::clock_t endVec = std::clock();
-	void sortDeque();
+	fordJohnsonSortDeque(_d1);
 	std::clock_t endDeque = std::clock();
 	
 	std::cout << "After: ";
-	for (std::vector<int>::iterator it = _v1.begin(); it != _v1.end(); it++)
+	// //to check if the vector is sorted
+	// for (std::vector<int>::iterator it = _v1.begin(); it != _v1.end(); it++) 
+	// 	std::cout << *it << " ";
+	//to check if the deque is sorted :
+	for (std::deque<int>::iterator it = _d1.begin(); it != _d1.end(); it++) 
 		std::cout << *it << " ";
 	std::cout << std::endl;
 	

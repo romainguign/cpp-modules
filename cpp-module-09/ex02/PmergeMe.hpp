@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 19:49:09 by roguigna          #+#    #+#             */
-/*   Updated: 2024/11/25 14:58:57 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:15:28 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ class PmergeMe
 		std::vector<int> _v1;
 		std::deque<int>	 _d1;
 		void		fillContainers(int argc, char **argv);
-		void		sortVector();
-		void		sortDeque();
 		PmergeMe();
 
 	public:
