@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 19:49:24 by roguigna          #+#    #+#             */
-/*   Updated: 2024/12/13 14:29:57 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/12/13 14:58:12 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,24 +64,19 @@ void PmergeMe::fillContainers(int argc, char **argv)
 	}
 }
 
-static std::vector<size_t> generateJacobStahlSequenceVector(size_t size)
+static std::vector<size_t> generateJacobStahlVector(size_t size)
 {
     std::vector<size_t> sequence;
     if (size == 0)
         return sequence;
-
-    sequence.push_back(0); // La suite commence toujours par 0.
-    size_t prev = 0;
-
-    while (true)
-    {
-        size_t next = prev * 2 + 1; // Génération Jacob-Stahl.
-        if (next >= size)
-            break;
-        sequence.push_back(next);
-        prev = next;
+    sequence.push_back(0);
+    
+    if (size == 1)
+        return sequence;
+    sequence.push_back(1 * 2);
+    for (size_t i = 2; i < size; ++i) {
+        sequence.push_back((2 * sequence[i - 2] + sequence[i - 1]));
     }
-
     return sequence;
 }
 
@@ -90,19 +85,14 @@ static std::deque<size_t> generateJacobStahlDeque(size_t size)
     std::deque<size_t> sequence;
     if (size == 0)
         return sequence;
-
-    sequence.push_back(0); // La suite commence toujours par 0.
-    size_t prev = 0;
-
-    while (true)
-    {
-        size_t next = prev * 2 + 1; // Génération Jacob-Stahl.
-        if (next >= size)
-            break;
-        sequence.push_back(next);
-        prev = next;
+    sequence.push_back(0);
+    
+    if (size == 1)
+        return sequence;
+    sequence.push_back(1 * 2);
+    for (size_t i = 2; i < size; ++i) {
+        sequence.push_back((2 * sequence[i - 2] + sequence[i - 1]));
     }
-
     return sequence;
 }
 
@@ -132,7 +122,7 @@ static void fordJohnsonSortVector(std::vector<int> &v1)
     fordJohnsonSortVector(large);
     std::vector<int> result = large;
 
-    std::vector<size_t> sequence = generateJacobStahlSequenceVector(small.size());
+    std::vector<size_t> sequence = generateJacobStahlVector(small.size());
     std::vector<bool> inserted(small.size(), false);
 
     for (size_t i = 0; i < sequence.size(); ++i)
