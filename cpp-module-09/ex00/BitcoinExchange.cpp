@@ -6,7 +6,7 @@
 /*   By: roguigna <roguigna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:45:40 by roguigna          #+#    #+#             */
-/*   Updated: 2024/11/19 16:53:02 by roguigna         ###   ########.fr       */
+/*   Updated: 2024/12/18 13:22:07 by roguigna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,21 @@ BitcoinExchange::BitcoinExchange()
 {
 	std::cout << "BitcoinExchange default constructor called" << std::endl;
 	saveData();
+}
+
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &other){
+	std::cout << "BitcoinExchange copy constructor called" << std::endl;
+	*this = other;
+}
+
+BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other)
+{
+	std::cout << "BitcoinExchange assignation operator called" << std::endl;
+	_data = other.getData();
+	return *this;
+}
+const std::map<std::string, double> &BitcoinExchange::getData() const {
+	return _data; 
 }
 
 void BitcoinExchange::saveData()
@@ -83,11 +98,11 @@ static void parseLine(std::string line, std::string &date, double &value)
 	parseDate(date);
 	if (line.find(" | ") + 3 >= line.size())
 		throw std::runtime_error("no value");
-	if ((line.substr(line.find(" | ") + 3)).find_first_not_of("0123456789.") != std::string::npos)
-		throw std::runtime_error("invalid value");
 	value = std::strtod((line.substr(line.find(" | ") + 3)).c_str(), NULL);
 	if (value < 0)
 		throw std::runtime_error("not a positive number");
+	if ((line.substr(line.find(" | ") + 3)).find_first_not_of("0123456789.") != std::string::npos)
+		throw std::runtime_error("invalid value");
 	if (value > 1000)
 		throw std::runtime_error("too large number");
 }
